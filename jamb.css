@@ -1,0 +1,74 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#nav{
+    color: white;
+    font-size:8px; 
+    padding: 10px;
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+header{
+    background-color: rgb(23, 167, 23);
+}
+#h3{
+    font-size: 11px;
+    color: rgb(78, 72, 72);
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+#thead{
+    padding: 10px;
+}
+#h4{
+    font-size: 8px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    color: rgb(78, 72, 72);
+}
+p{
+    font-size: 9px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h4{
+    color: black;
+}
+h2{
+    border: 0; font-size: 10px; padding:20px;margin: auto;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+h1{
+    font-size: 10px;
+    padding-top: 0;
+}
+#start{
+    padding: 200px;
+}
+
+.q{
+    padding: 5px 10px;
+    background-color: green;
+    border-radius: 5px 5px;
+    display: inline;
+    color: white;
+    margin: 1px;
+}
+.q:hover{
+    background-color: greenyellow;
+}
+#option_box{
+    border: 2px groove rgb(23, 167, 23);
+    padding: 10px;
+    border-radius: 5px 5px;
+    margin-top: -2rem;
+}
+#question_box{
+ border: 2px solid rgb(23, 167, 23);
+ padding: 10px;
+ display: inline-block;
+ border-radius: 5px 5px;
+
+}

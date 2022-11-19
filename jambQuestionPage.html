@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>current Affairs</title>
+    <link rel="stylesheet" href="jamb.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap_css/bootstrap.min.css">
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <header>
+        <nav id="nav">Jamb CBT Practice</nav>
+    </header>
+    <section class="container">
+        <h3 id="h3">Current Affairs - Jamb CBT</h3>
+        <h4 id="h4">Time limit: <span id="time_countdown"></span></h4>
+        <div id="time_limit"></div>
+        <p>Question ${} of ${} <br> <br>
+        choose the word(s) or phrase(s) which best fill(s) the gap(s).</p> <br>
+        <div id="option_box">
+            <div id="question"></div>
+            <div id="option1"></div>
+            <div id="option2"></div>
+            <div id="option3"></div>
+            <div id="option4"></div>
+        </div>
+        
+        <button id="prev">Prev</button>
+        <button id="next" style="float: right;">Next</button> <br> <br>
+        
+        
+    </section>
+
+
+
+<div id="question_box" class="container-fluid">
+    
+</div>
+
+
+<script type="text/javascript">
+
+
+
+
+
+</script>
+    <script>
+        $(document).ready()
+
+        
+        // get questions
+        // time elapsing 
+        // show question
+        //show options with radio button
+        // collect answer
+        //next question 
+        //previous question
+        //end questions 
+
+           // The data/time we want to countdown to
+    var countDownDate = new Date("Nov 2, 2022 23:9").getTime();
+
+// Run myfunc every second
+var myfunc = setInterval(function() {
+
+var now = new Date().getTime();
+var timeleft = countDownDate - now;
+    
+// Calculating the days, hours, minutes and seconds left
+var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+    
+// Result is output to the specific element
+document.getElementById("time_countdown").innerHTML = minutes+"m "+ seconds +"s."
+// document.getElementById("hours").innerHTML = hours + "h " 
+// document.getElementById("mins").innerHTML = minutes + "m " 
+// document.getElementById("secs").innerHTML = seconds + "s " 
+    
+// Display the message when countdown is over
+if (timeleft < 0) {
+    clearInterval(myfunc);
+    document.getElementById("days").innerHTML = " ";
+    document.getElementById("hours").innerHTML = " " ;
+    document.getElementById("mins").innerHTML = " " ;
+    document.getElementById("secs").innerHTML = " " ;
+    document.getElementById("time_countdown").innerHTML = "TIME UP!!";
+}
+}, 1000);
+
+
+
+
+var currentQuestion = 1;
+var no_quest = prompt('how many questions would you like to answer?')
+no_quest=parseInt(no_quest);
+var ques_buttons = []
+
+const test = {1 :
+    {
+        '1': "what is the capital of Ethiopia?", 
+        '2':"Algiers",
+        '3':"Addis Ababa",
+        '4':"Abuja",
+        '5':"Bissau",
+        'answer':"Addis Ababa"
+    },
+2:
+{
+    '1': "what is the capital of Madagascar?", 
+    '2':"Bamako",
+    '3':"Cairo",
+    '4':"Antananarivo",
+    '5':"Bujumbura",
+    'answer':"Antananarivo"
+},
+3:
+{
+    '1': "what is the capital of Algeria?",
+    '2': "Asmara",
+    '3': "Brazzaville",
+    '4': "Banku",
+    '5': "Algiers",
+    'answer': "Algiers"
+},
+4:
+{
+    '1':"what is the capital of Tanzania?",
+    '2':"Dodoma",
+    '3':"Pizza",
+    '4':"Gaborone",
+    '5':"Kampala",
+    'answer':"Dodoma"
+},
+5:
+{
+    '1':"what is the capital of Senegal?",
+    '2':"Conakry",
+    '3':"Dakar",
+    '4':"Abuja",
+    '5':"Togo",
+    'answer':"Dakar"
+},
+6:
+{
+    '1':"what is the capital of Zimbabwe?",
+    '2':"Congo",
+    '3':"Harare",
+    '4':"Cotonou",
+    '5':"Zimzam",
+    'answer':"Harare"
+},
+7:
+{
+    '1':"what is the capital of Rwanda?",
+    '2':"Kigali",
+    '3':"Lome",
+    '4':"Malabo",
+    '5':"Nairobi",
+    'answer':"Kigali"
+},
+8:
+{
+    '1':"what is the capital of Sudan?",
+    '2':"Kampala",
+    '3':"Juba",
+    '4':"Freetown",
+    '5':"Khartoum",
+    'answer':"Khartoum"
+},
+9:
+{
+    '1':"what is the capital of Sierra Leone?",
+    '2':"Freetown",
+    '3':"Kigali",
+    '4':"Liberville",
+    '5':"Lubetown",
+    'answer':"Freetown"
+},
+10:
+{
+    '1':"what is the capital of Uganda?",
+    '2':"Kampala",
+    '3':"Kishi",
+    '4':"Kuwait",
+    '5':"Ketu",
+    'answer':"Kampala"
+}
+}
+
+function display_question(num){
+        var question = document.getElementById("question");
+        question.innerHTML= test[num][1];
+        var option1 = document.getElementById("option1");
+        option1.innerHTML = "<input type='radio' id='option1' name='option' value='1'> " + test[num][2]  ;
+        var option2 = document.getElementById("option2");
+        option2.innerHTML="<input type='radio' name='option' value='2'> " +test[num][3];
+        var option3 = document.getElementById("option3");
+        option3.innerHTML="<input type='radio' name='option' value='3'> " +test[num][4];
+        var option4 = document.getElementById("option4");
+        option4.innerHTML="<input type='radio' name='option' value='4'> " +test[num][5];
+
+        var total = `<p class="totalQ"> Question ${num} of ${no_quest}</p>`;
+        $('p').html(" ");
+        $('p').append(total);
+    
+}
+// if(document.option1.checked) {   
+//     rate_value=document.option.checked.value
+//          document.write(rate_value);   
+// } else {  
+//          document.write("Summer radio button is not selected");   
+// }  
+// rate_value =0;
+// if (document.getElementById('option1').checked) {
+//   rate_value = document.getElementById('option1').value;
+// };
+//  console.log(rate_value);
+
+
+display_question(currentQuestion);
+
+function buttons(){
+    var next_button = document.getElementById("next");
+    next_button.addEventListener('click',function(){
+        console.log(currentQuestion)
+        if(currentQuestion + 1 > no_quest){
+
+        }else{
+            currentQuestion++;
+            display_question(currentQuestion)
+        }
+        
+    });
+
+    var previous_button=document.getElementById("prev");
+    previous_button.addEventListener('click', function(){
+        if(currentQuestion - 1 < 1){
+
+        }else{
+            currentQuestion--;
+            display_question(currentQuestion)
+        }
+        
+    });
+
+// total num of question 
+}
+
+function add_buttons(number){
+    for(var i = 1; i<=number; i++){
+        var html = `<div class="q" id="${i}"> ${i} </div>`
+        $("#question_box").append(html)
+    }
+}
+
+function button_event(){
+    $(document).on('click','.q', function(){
+        var number = $(this).attr("id")
+        display_question(number);    
+    
+    })
+}
+
+add_buttons(no_quest);
+
+button_event()
+
+
+
+
+
+// $(document).on("click",".q", function(){
+//         $(".q").removeClass("active")
+//         $(this).addClass("active")
+//         var number = $(this).attr("id")
+//         $("#question").text(number)
+//     })
+
+buttons();
+
+  
+</script>
+    
+</body>
+</html>
